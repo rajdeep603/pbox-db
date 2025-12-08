@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS propertybox.property_listing (
     record_id SERIAL PRIMARY KEY,
-    property_id INTEGER NOT NULL,
+    property_id TEXT,
     currency VARCHAR(10) NOT NULL,
     listing_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     status VARCHAR(20),
