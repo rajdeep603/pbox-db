@@ -1,7 +1,7 @@
-CREATE TABLE IF NOT EXISTS master.roles (
+CREATE TABLE IF NOT EXISTS propertybox.village (
     record_id SERIAL PRIMARY KEY,
-    role_name VARCHAR(100) NOT NULL,
-    description TEXT,
+    village_name VARCHAR(255) NOT NULL,
+    village_pin_code VARCHAR(20),
     is_active BOOLEAN DEFAULT true,
     is_deleted BOOLEAN DEFAULT false,
     inserted_by INT,
