@@ -17,3 +17,7 @@ CREATE TABLE IF NOT EXISTS propertybox.users (
     update_date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
  
 );
+
+ALTER TABLE IF EXISTS propertybox.users
+ADD COLUMN IF NOT EXISTS profile_picture_url TEXT,
+ADD COLUMN IF NOT EXISTS guid VARCHAR(36) UNIQUE;
