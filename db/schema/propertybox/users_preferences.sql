@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS propertybox.users_preferences (
     property_age INT[],
     bhk_count INT[],
     bathroom_count INT[],
-    
+
     
 
     budget_min INT,
@@ -32,3 +32,4 @@ CREATE TABLE IF NOT EXISTS propertybox.users_preferences (
     updated_by INT,
     update_date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
