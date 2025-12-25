@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS propertybox.properties (
 
     title VARCHAR(255),
     description TEXT,
+    
 
     property_type_id INT REFERENCES master.picklist(record_id),
     community_type_id INT REFERENCES master.picklist(record_id),
@@ -27,3 +28,6 @@ CREATE TABLE IF NOT EXISTS propertybox.properties (
     updated_by INT,
     update_date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE IF EXISTS propertybox.properties
+    ADD COLUMN IF NOT EXISTS user_id INT REFERENCES propertybox.users(record_id) ON DELETE CASCADE;
