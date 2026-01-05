@@ -21,3 +21,9 @@ CREATE TABLE IF NOT EXISTS propertybox.users (
 ALTER TABLE IF EXISTS propertybox.users
 ADD COLUMN IF NOT EXISTS profile_picture_url TEXT,
 ADD COLUMN IF NOT EXISTS guid VARCHAR(36) UNIQUE;
+
+ALTER TABLE IF EXISTS propertybox.users
+DROP COLUMN IF EXISTS guid;
+
+ALTER TABLE IF EXISTS propertybox.users
+ADD COLUMN IF NOT EXISTS guid UUID UNIQUE DEFAULT gen_random_uuid();
