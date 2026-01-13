@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS propertybox.property_views (
 
     is_active BOOLEAN DEFAULT TRUE,
     is_deleted BOOLEAN DEFAULT FALSE,
-
     inserted_by INT,
     insert_date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_by INT,

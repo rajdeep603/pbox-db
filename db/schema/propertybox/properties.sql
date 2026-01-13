@@ -30,4 +30,13 @@ CREATE TABLE IF NOT EXISTS propertybox.properties (
 );
 
 ALTER TABLE IF EXISTS propertybox.properties
-    ADD COLUMN IF NOT EXISTS user_id INT REFERENCES propertybox.users(record_id) ON DELETE CASCADE;
+    ADD COLUMN IF NOT EXISTS user_id INT REFERENCES propertybox.users(record_id) ON DELETE CASCADE,
+    ADD COLUMN IF NOT EXISTS furniture_type_id INT REFERENCES master.picklist(record_id),
+    ADD COLUMN IF NOT EXISTS property_age INT,
+    ADD COLUMN IF NOT EXISTS bhk INT,
+    ADD COLUMN IF NOT EXISTS no_of_bathrooms INT,
+    ADD COLUMN IF NOT EXISTS build_up_area_sqft DECIMAL(10,2),
+    ADD COLUMN IF NOT EXISTS car_parking_cost DECIMAL(10,2),
+    ADD COLUMN IF NOT EXISTS amenities_cost DECIMAL(10,2),
+    ADD COLUMN IF NOT EXISTS additional_cost DECIMAL(10,2),
+    ADD COLUMN IF NOT EXISTS plot_area_sqft DECIMAL(10,2);

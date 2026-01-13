@@ -18,5 +18,11 @@ CREATE TABLE IF NOT EXISTS propertybox.property_inquiries (
 
 ALTER TABLE IF EXISTS propertybox.property_inquiries
     ADD COLUMN IF NOT EXISTS contact_number VARCHAR(15),
-    ADD COLUMN IF NOT EXISTS description TEXT;
+    ADD COLUMN IF NOT EXISTS description TEXT,
+    ADD COLUMN IF NOT EXISTS email VARCHAR(255),
+    ADD COLUMN IF NOT EXISTS callback_request_time TIMESTAMP,
+    ADD COLUMN IF NOT EXISTS callback_request_pl_id INT NOT NULL REFERENCES master.picklist(record_id),
+    DROP COLUMN IF EXISTS property_interest_pl_id CASCADE;;
+    
+    
 
