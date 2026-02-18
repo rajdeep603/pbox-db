@@ -39,5 +39,7 @@ ALTER TABLE IF EXISTS propertybox.properties
     ADD COLUMN IF NOT EXISTS car_parking_cost DECIMAL(10,2),
     ADD COLUMN IF NOT EXISTS amenities_cost DECIMAL(10,2),
     ADD COLUMN IF NOT EXISTS additional_cost DECIMAL(10,2),
+    ADD COLUMN IF NOT EXISTS monthly_rent DECIMAL(10,2),
+    ADD COLUMN IF NOT EXISTS monthly_maintenance DECIMAL(10,2),
     ADD COLUMN IF NOT EXISTS availability_from TIMESTAMP,
     ADD COLUMN IF NOT EXISTS plot_area_sqft DECIMAL(10,2);
