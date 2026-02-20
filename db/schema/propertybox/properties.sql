@@ -42,4 +42,5 @@ ALTER TABLE IF EXISTS propertybox.properties
     ADD COLUMN IF NOT EXISTS monthly_rent DECIMAL(10,2),
     ADD COLUMN IF NOT EXISTS monthly_maintenance DECIMAL(10,2),
     ADD COLUMN IF NOT EXISTS availability_from TIMESTAMP,
+    ADD COLUMN IF NOT EXISTS property_current_status_id INT REFERENCES master.picklist(record_id),
     ADD COLUMN IF NOT EXISTS plot_area_sqft DECIMAL(10,2);
