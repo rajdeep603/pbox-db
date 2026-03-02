@@ -22,7 +22,9 @@ ALTER TABLE IF EXISTS propertybox.property_inquiries
     ADD COLUMN IF NOT EXISTS email VARCHAR(255),
     ADD COLUMN IF NOT EXISTS callback_request_time TIMESTAMP,
     ADD COLUMN IF NOT EXISTS callback_request_pl_id INT NOT NULL REFERENCES master.picklist(record_id),
-    DROP COLUMN IF EXISTS property_interest_pl_id CASCADE;;
+    Add COLUMN IF NOT EXISTS status_id INT NOT NULL REFERENCES master.picklist(record_id) ON DELETE CASCADE,
+    ADD COLUMN IF NOT EXISTS property_owner_id INT NOT NULL REFERENCES propertybox.users(record_id) ON DELETE CASCADE,
+    DROP COLUMN IF EXISTS property_interest_pl_id CASCADE;
     
     
 
