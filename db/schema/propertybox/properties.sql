@@ -45,4 +45,8 @@ ALTER TABLE IF EXISTS propertybox.properties
     ADD COLUMN IF NOT EXISTS property_current_status_id INT REFERENCES master.picklist(record_id),
     ADD COLUMN IF NOT EXISTS requirement_type_id INT REFERENCES master.picklist(record_id),
     ADD COLUMN IF NOT EXISTS property_inactive_status_id INT REFERENCES master.picklist(record_id),
+    ADD COLUMN IF NOT EXISTS primary_location_id INT REFERENCES master.picklist(record_id),
+    ADD COLUMN IF NOT EXISTS other_primary_location VARCHAR(255),
+    ADD COLUMN IF NOT EXISTS total_floor INT,
+    ADD COLUMN IF NOT EXISTS flat_floor INT,
     ADD COLUMN IF NOT EXISTS plot_area_sqft DECIMAL(10,2);
