@@ -49,4 +49,8 @@ ALTER TABLE IF EXISTS propertybox.properties
     ADD COLUMN IF NOT EXISTS other_primary_location VARCHAR(255),
     ADD COLUMN IF NOT EXISTS total_floor INT,
     ADD COLUMN IF NOT EXISTS flat_floor INT,
+    ADD COLUMN IF NOT EXISTS no_of_parkings INT,
+    ADD COLUMN IF NOT EXISTS no_of_balconies INT,
+    ALTER COLUMN bhk TYPE VARCHAR(10),
+    ALTER COLUMN property_age TYPE VARCHAR(10),
     ADD COLUMN IF NOT EXISTS plot_area_sqft DECIMAL(10,2);
