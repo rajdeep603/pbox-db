@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS propertybox.users (
     gender_pl_id INT REFERENCES master.picklist (record_id),
     date_of_birth DATE,
     qualification_pl_id INT REFERENCES master.picklist (record_id),
-    user_type_pl_id INT REFERENCES master.picklist (record_id), eg. 'admin', 'freelance agent', 'corporate agent', 'customer', 'realtor', 'service provider'
+    user_type_pl_id INT REFERENCES master.picklist (record_id),
     is_active BOOLEAN DEFAULT true,
     is_deleted BOOLEAN DEFAULT false,
     inserted_by INT,
@@ -21,11 +21,11 @@ CREATE TABLE IF NOT EXISTS propertybox.users (
 ALTER TABLE IF EXISTS propertybox.users
 ADD COLUMN IF NOT EXISTS profile_picture_url TEXT,
 ADD COLUMN IF NOT EXISTS guid VARCHAR(36) UNIQUE,
-ADD COLUMN IF NOT EXISTS budget_range_sell_pl_id INT REFERENCES master.picklist (record_id),
-ADD COLUMN IF NOT EXISTS budget_range_rent_pl_id INT REFERENCES master.picklist (record_id),
 ADD COLUMN IF NOT EXISTS preferred_contact_pl_ids VARCHAR(20),
 ADD COLUMN IF NOT EXISTS contact_sharing BOOLEAN DEFAULT FALSE,
 ADD COLUMN IF NOT EXISTS notes_to_owner TEXT,
 ADD COLUMN IF NOT EXISTS prefer_timeline_rent_pl_id INT REFERENCES master.picklist (record_id),
 ADD COLUMN IF NOT EXISTS prefer_timeline_sell_pl_id INT REFERENCES master.picklist (record_id),
+ADD COLUMN IF NOT EXISTS budget_range_sell_pl_ids VARCHAR(20),
+ADD COLUMN IF NOT EXISTS budget_range_rent_pl_ids VARCHAR(20),
 ADD COLUMN IF NOT EXISTS stay_in_home_pl_id INT REFERENCES master.picklist (record_id);
