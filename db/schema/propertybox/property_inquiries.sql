@@ -25,6 +25,7 @@ ALTER TABLE IF EXISTS propertybox.property_inquiries
     Add COLUMN IF NOT EXISTS status_id INT NOT NULL REFERENCES master.picklist(record_id) ON DELETE CASCADE,
     ADD COLUMN IF NOT EXISTS property_owner_id INT NOT NULL REFERENCES propertybox.users(record_id) ON DELETE CASCADE,
     DROP COLUMN IF EXISTS property_interest_pl_id CASCADE;
+    DROP COLUMN IF EXISTS callback_request_pl_id CASCADE;
     
     
 

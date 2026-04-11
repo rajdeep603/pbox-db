@@ -51,6 +51,7 @@ ALTER TABLE IF EXISTS propertybox.properties
     ADD COLUMN IF NOT EXISTS flat_floor INT,
     ADD COLUMN IF NOT EXISTS no_of_parkings INT,
     ADD COLUMN IF NOT EXISTS no_of_balconies INT,
+    ADD COLUMN IF NOT EXISTS is_new_listing INT,
     ADD COLUMN IF NOT EXISTS score INT,
     ALTER COLUMN bhk TYPE VARCHAR(10),
     ALTER COLUMN property_age TYPE VARCHAR(10),
