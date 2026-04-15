@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS propertybox.users_preferences (
 
 ALTER TABLE IF EXISTS propertybox.users_preferences
     ADD COLUMN IF NOT EXISTS primary_location_ids INT[], 
-    ADD COLUMN IF NOT EXISTS furniture_type_ids INT[];
+    ADD COLUMN IF NOT EXISTS furniture_type_ids INT[],
+    ALTER COLUMN bhk_count TYPE VARCHAR[];
 
 
