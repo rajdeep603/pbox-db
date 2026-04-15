@@ -33,3 +33,8 @@ CREATE TABLE IF NOT EXISTS propertybox.users_preferences (
     update_date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE IF EXISTS propertybox.users_preferences
+    ADD COLUMN IF NOT EXISTS primary_location_ids INT[], 
+    ADD COLUMN IF NOT EXISTS furniture_type_ids INT[];
+
+
