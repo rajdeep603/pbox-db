@@ -32,4 +32,7 @@ ADD COLUMN IF NOT EXISTS budget_range_sell_pl_ids VARCHAR(20),
 ADD COLUMN IF NOT EXISTS budget_range_rent_pl_ids VARCHAR(20),
 ADD COLUMN IF NOT EXISTS latitude DECIMAL(10,7),
 ADD COLUMN IF NOT EXISTS longitude DECIMAL(10,7),
+ALTER COLUMN budget_range_sell_pl_ids TYPE INT[],
+ALTER COLUMN budget_range_rent_pl_ids TYPE INT[],
+ALTER COLUMN preferred_contact_pl_ids TYPE INT[],
 ADD COLUMN IF NOT EXISTS stay_in_home_pl_id INT REFERENCES master.picklist (record_id);
