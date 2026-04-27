@@ -1,11 +1,13 @@
-CREATE TABLE IF NOT EXISTS propertybox.env_var (
+CREATE TABLE IF NOT EXISTS propertybox.payment (
     record_id SERIAL PRIMARY KEY,
 
     is_active BOOLEAN DEFAULT TRUE,
     is_deleted BOOLEAN DEFAULT FALSE,
     
-    var_name VARCHAR(255) NOT NULL,
-    var_value TEXT NOT NULL,
+    payment_status VARCHAR(255) NOT NULL,
+    product_id VARCHAR(255) NOT NULL,
+    error_message TEXT,
+    user_id INT REFERENCES propertybox.users(record_id) ON DELETE CASCADE,
 
     inserted_by INT,
     insert_date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
