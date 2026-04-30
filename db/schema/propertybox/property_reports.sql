@@ -1,11 +1,14 @@
-CREATE TABLE IF NOT EXISTS propertybox.property_media (
+CREATE TABLE IF NOT EXISTS propertybox.property_reports (
     record_id SERIAL PRIMARY KEY,
 
-    property_id INT NOT NULL REFERENCES propertybox.properties(record_id) ON DELETE CASCADE,
+    user_id INT NOT NULL REFERENCES propertybox.users(record_id) ON DELETE CASCADE,
 
-    media_type VARCHAR(20) NOT NULL, -- e.g., 'image', 'video'
-    url TEXT NOT NULL,
-    display_order INT DEFAULT 0,
+    property_id INT NOT NULL REFERENCES propertybox.properties(record_id) ON DELETE CASCADE,
+    property_owner_id INT NOT NULL REFERENCES propertybox.users(record_id) ON DELETE CASCADE,
+
+    report_id INT NOT NULL REFERENCES master.picklist(record_id),
+
+    other_report TEXT,
 
     is_active BOOLEAN DEFAULT TRUE,
     is_deleted BOOLEAN DEFAULT FALSE,
@@ -15,6 +18,3 @@ CREATE TABLE IF NOT EXISTS propertybox.property_media (
     updated_by INT,
     update_date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-ALTER TABLE IF EXISTS propertybox.property_media
-    ALTER COLUMN media_type TYPE VARCHAR(100); 
