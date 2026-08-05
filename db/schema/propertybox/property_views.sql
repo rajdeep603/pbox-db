@@ -12,3 +12,12 @@ CREATE TABLE IF NOT EXISTS propertybox.property_views (
     updated_by INT,
     update_date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+DO $$ BEGIN
+    CREATE TYPE propertybox.visit_path AS ENUM ('qr', 'browsing');
+EXCEPTION WHEN duplicate_object THEN null;
+END $$;
+
+ALTER TABLE IF EXISTS propertybox.property_views
+    ADD COLUMN IF NOT EXISTS user_source VARCHAR(100),
+    ADD COLUMN IF NOT EXISTS visit_path propertybox.visit_path;
